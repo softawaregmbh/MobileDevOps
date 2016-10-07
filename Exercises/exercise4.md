@@ -13,7 +13,7 @@
 1. Choose Products > Xamarin Test Cloud
 1. Click on "Start your free trial"
    ![Xamarin Cloud Free Trial](images/exercise4/XamarinCloudFreeTrial.png)
-1. Register
+1. Register<br/>
    ![Xamarin Cloud Free Register](images/exercise4/XamarinCloudRegister.png)
 
 ## Create a new Test Project in Visual Studio
@@ -29,7 +29,7 @@
    * ```Install-Package NUnitTestAdapter -Version 2.0.0```
    * ```Install-Package Xamarin.UITest -Version 1.3.8```
 
-   ![Add NuGet packages](images/exercise4/nuget.png)
+   ![Add NuGet packages](images/exercise4/nuget.PNG)
 
 ## Create your first test
 ```
@@ -72,7 +72,7 @@ Detailed functionality can be found at [Xamarin.UITest.IApp](https://developer.x
 1. Publish to Xamarin Test Cloud   
    ![Publish to Xamarin Test Cloud](images/exercise4/PublishTests.png)
 1. Select target devices for the test (Note: Using the trial edition restricts the amount of parallel tested devices to 3.)
-   ![Device selection](images/exercise4/XamarinTestCloudSelectDevice.png)
+   ![Device selection](images/exercise4/XamarinTestCloudSelectDevice.PNG)
 
 
 
