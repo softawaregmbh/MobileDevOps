@@ -12,7 +12,7 @@
 Go to offical [Visual Studio Team Service](https://www.visualstudio.com/de/team-services/) page and create an account for free. Login with your existing microsoft account or create a new one.
 A name for your *VSTS* and additionall information to your first project (created on account creation) have to be entered.
 
-![VSTS_Create_Account](images\exercise2\VSTS_Create_Account.png "Create VSTS account")
+![VSTS_Create_Account](images/exercise2/VSTS_Create_Account.png "Create VSTS account")
 
 After login there is an overview of your existing projects (should be only one after creating a new account). The navigation area is on the top left and there are four navigation points:
 
