@@ -77,7 +77,7 @@ Detailed functionality can be found at [Xamarin.UITest.IApp](https://developer.x
 
 
 ## Relevant Links:
-* [Nunit](http://www.nunit.org/).
+* [NUnit](http://www.nunit.org/)
 * [Introduction to Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud/introduction-to-test-cloud)  
 * [Introdution to Xamarin.UITest](https://developer.xamarin.com/guides/testcloud/uitest/intro-to-uitest/)
 * [Xamarin.UITest Quick Starts](https://developer.xamarin.com/guides/testcloud/uitest/quickstarts/)
