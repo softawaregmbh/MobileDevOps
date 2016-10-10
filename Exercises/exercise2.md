@@ -1,5 +1,12 @@
 # Visual Studio Team Services and Xamarin
 
+## Learnings
+
+1. Create Team Service account
+1. Create Team Service Project
+1. Import Code from GitHub into Project
+1. Build automation of project in VSTS
+
 ## Create Team Service account
 
 Go to offical [Visual Studio Team Service](https://www.visualstudio.com/de/team-services/) page and create an account for free. Login with your existing microsoft account or create a new one.
@@ -102,5 +109,3 @@ Now the changed can be saved and the first build should be done. Click on the **
 ![Build_Log](images\exercise2\Build_Log.png "Log during first build")
 
 ![Build_Log_Success](images\exercise2\Build_Log_Success.png "Log during first build")
-
-## Release Management
