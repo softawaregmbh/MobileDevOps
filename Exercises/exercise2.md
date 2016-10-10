@@ -7,10 +7,11 @@
 1. Import Code from GitHub into Project
 1. Build automation of project in VSTS
 
-## Create Team Service account
+## Create your Team Service account
 
-Go to offical [Visual Studio Team Service](https://www.visualstudio.com/de/team-services/) page and create an account for free. Login with your existing microsoft account or create a new one.
-A name for your *VSTS* and additionall information to your first project (created on account creation) have to be entered.
+1. Go to the offical [Visual Studio Team Service](https://www.visualstudio.com/de/team-services/) page and create an account for free. 
+1. Login with your existing microsoft account or create a new one.
+1. A name for your *VSTS* and additionall information to your first project (created on account creation) have to be entered.
 
 ![VSTS_Create_Account](images/exercise2/VSTS_Create_Account.png "Create VSTS account")
 
@@ -22,17 +23,15 @@ After login there is an overview of your existing projects (should be only one a
 4. [Load Tests](#load_tests)
 
 #### Overview
-Dashboard with good starting information about the *VSTS* account.
-* Quick look over all of your projects.
-* Create and link to the projects.
-* Some helping information
+Dashboard with some overview information about your *VSTS* account.
+* Your projects
 * VSTS News
-* Build and load testing stats
+* Build and load testing statistics
 
 ![VSTS_Overview](images/exercise2/VSTS_Start_Page.png "Overview")
 
 #### Users
-View of the user management of the *VSTS* account.
+User management of the *VSTS* account.
 * List all users and their access level.
 * Create and edit users and their access level.
 * Export users as csv.
@@ -40,69 +39,63 @@ View of the user management of the *VSTS* account.
 ![VSTS_Users](images/exercise2/VSTS_Start_Users.png "Users")
 
 #### Rooms
-View of the team rooms management of the *VSTS* account. Team rooms will automatic created for each project. In team rooms the team cann disqus issues and work in progress and share their status.
-* List all rooms and.
-* Create and edit rooms.
+View of the team rooms management of the *VSTS* account. Team rooms are automatically created for each project to discuss issues and share the status.
 
 ![VSTS_Users](images/exercise2/VSTS_Start_Rooms.png "Users")
 
 #### Load Tests
-View of the load test management of the *VSTS* account. Create, edit and start cloud based load testing for your web projects. 20.000 minutes each month are free. For more [information](https://www.visualstudio.com/docs/test/performance-testing/getting-started/getting-started-with-performance-testing).
+View of the load test management of the *VSTS* account. Create, edit and start cloud-based load testing for your web projects. 20.000 minutes each month are free. See [Getting started with Performance testing](https://www.visualstudio.com/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) for more information.
 
 ![VSTS_Users](images/exercise2/VSTS_Start_Rooms.png "Users")
 
 ## Create Team Project in VSTS
 
-Choose project name and description to specify your app. In our case, we choose *Hanselman.Forms*. There are three process template to choose:
+Choose a project name and a description to specify your app. In our case, we choose **Hanselman.Forms**. There are three process template to choose:
 
 1. Agile
 2. CMMI
 3. Scrum
 
-Choose the process that provides the best fit for your team. [For more information](https://www.visualstudio.com/it-it/docs/work/guidance/choose-process).
-At the end you have to choose the version control system. There are two options to choice.
+Choose the process that fits best for your team (see [Guidance](https://www.visualstudio.com/it-it/docs/work/guidance/choose-process) for more information).
+Finally choose a version control system, we use **Git**.
 
 ![VSTS_Create_Project](images/exercise2/CreateTeamProject.png "Create team project in VSTS")
 
 ![VSTS_Create_Project_Progress](images/exercise2/CreateTeamProject-Progress.png "Progress of creating team project in VSTS")
 
 ## Import data from GitHub
-After project creation, their is also an empty repository with same name as the project created. In this example we use the code from an external GitHub repository. So we have to import this code. You can do this in the area *Code*. Click the button **Import repository** and add the following link: [https://github.com/jamesmontemagno/Hanselman.Forms.git](https://github.com/jamesmontemagno/Hanselman.Forms.git);
+In this example we use the code from an external GitHub repository, so we have to import this code. Click on **Code**, **Import repository** and add the following link: [https://github.com/jamesmontemagno/Hanselman.Forms.git](https://github.com/jamesmontemagno/Hanselman.Forms.git);
 
 ![VSTS_Import_Code_From_GitHub](images/exercise2/Import_From_Git_Repo.png "Import code from GitHub-Repo")
 
-The code should appear in the *VSTS* repo after the import completed. Now cloning from the *VSTS* repo is possible at any time.
+The code should appear in the *VSTS* repo after the import completed. You can clone from the *VSTS* repo at any time.
 
 ![VSTS_After_Import_Code_From_GitHub](images/exercise2/After_Import_From_Git_Repo.png "Imported code from GitHub-Repo")
+
 ## Build Automation
-Without changing any code we can configure our automated build with *VSTS*. For this exercie you have to change to the **BUILD** view. This view provides an overview of all build definitions and their current stati.
+1. Without changing any code we can configure our automated build with *VSTS*. 
+1. Switch to the **BUILD** view. This view provides an overview of all build definitions and their current status.
+1. Create a new build definition by clicking on the **NEW DEFINITION** button.
+    ![Build_Start](images/exercise2/Build_Start.png "New build definition button")
 
-Create a new build definition by clicking on the **NEW DEFINITION** button.
-
-![Build_Start](images/exercise2/Build_Start.png "New build definition button")
-
-In the opened dialog you can choose a predefined build template. The templates are grouped in two tabs:
-
-1. Build
-2. Deployement
-
-In our case the **Xamarin.Android** Build template is the one to choose. Globally, if there is an template for your project type, use it and change it later. If there isn't one choose an empty template.
-
-![Build_New_Definition](images/exercise2/Build_New_Definition_From_Template.png "Create new build definition")
-
-After clicking **Next** settings have to definied. Choose the created repo of your *VSTS* and choose the master branch as default branch. The option *Continous integration* starts the build whenever the selected branch is updated. Choose this option if this is the right choice for your build definition. In this example we use this feature and select the checkbox. With the default agent queue selection you can choose the correct agent for building. The hosted version has 240 build minutes for free. More [information](https://www.visualstudio.com/en-us/docs/build/admin/agents/hosted-pool). Click on the **Create** button to finish this step.
+1. In the opened dialog you can choose a predefined build template. The templates are grouped in two tabs: Build and Deployement. Choose **Build**
+1. Choose the **Xamarin.Android** Build template.
+    ![Build_New_Definition](images/exercise2/Build_New_Definition_From_Template.png "Create new build definition")
+1. Click on **Next**
+1. Choose the created repository of your *VSTS* and choose the master branch as default branch. 
+1. Activate the option *Continous integration* to start the build whenever the selected branch is updated. 
+1. Choose **Hosted** as your default agent queue. The hosted version has 240 build minutes for free. More information can be fround [here](https://www.visualstudio.com/en-us/docs/build/admin/agents/hosted-pool). 
+1. Click on the **Create** button to finish this step.
 
 ![Build_New_Definition](images/exercise2/Build_New_Definition_From_Template_2.png "Create new build definition")
 
-The view of the build definition settings is bisected. The build steps are listed in the left section and the right section is for the settings of the selected build step.
+You see two columns in your build definition settings: The build steps are listed in the left section, the settings of the selected build step are on the right side.
 
 ![Build_Edit_Build_Steps_1](images/exercise2/Build_Edit_Steps_1.png "Edit build definition")
 
-The selected build template is nearly perfekt for our project. The only change is, you have to disable the **Xamarin Test Cloud - Test** step. To do this, select the step and deselect the **Enabled** checkbox in the **Control options** section.
-
-[comment]: <> (Die steps näher erklären?!)
-
-Now the changed can be saved and the first build should be done. Click on the **Queue new build** button, confirm the opened modal without changing anything and watch the log on the next view you get automatic after starting the build.
+1. Discuss the several steps in the build template
+1. Disable the **Xamarin Test Cloud - Test** step: Select the step and deselect the **Enabled** checkbox in the **Control options** section. We'll add test automation later.
+1. Click on **Queue new build**, confirm the opened dialog without changing anything and watch the logging information.
 
 ![Build_Start_First_Build](images/exercise2/Build_Start_First_Build.png "Start first build")
 
