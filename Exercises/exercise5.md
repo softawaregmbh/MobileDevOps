@@ -4,11 +4,10 @@
 
 ## Learnings
 
-1. [Register to HockeyApp](#register_to_hockeyapp)
-1. [Connection between VSTS and HockeyApp](#connection_between_vsts_and_hockeyapp)
-1. [Build integration](#build_integration)
-1. [HockeyApp integration in project](#hockeyapp_integration_in_project)
-1. [User feedback integration in project](#user_feedback_integration_in_project)
+1. [Register to HockeyApp](#register-to-hockeyApp)
+1. [Connection between VSTS and HockeyApp](#connection-between-vsts-and-hockeyapp)
+1. [Build integration](#build-integration)
+1. [HockeyApp integration in project](#hockeyapp-integration-in-project)
 
 ## Register to HockeyApp
 1. Go to offical [HockeyApp](https://www.hockeyapp.net/) page
@@ -78,6 +77,44 @@ Back to the build definition, after refresh (click on the refresh button) the "S
 
 ## HockeyApp integration in project
 
-## User feedback integration in project
+### Crash Reporting
+1. Add NuGet package: [HockeySDK.Xamarin ](https://www.nuget.org/packages/HockeySDK.Xamarin/)
+![Integration_NuGet](images/exercise5/Integration_NuGet.png "Add HockeySDK.Xamarin")
 
-## Release Management
+1. Add code to Properties/AssemblyInfo.cs
+```cs
+[assembly: MetaData("net.hockeyapp.android.appIdentifier", Value = "App ID")]
+```
+
+1. Add code to **MainActivity**
+```cs
+CrashManager.Register(this);
+```
+
+### User Metrics
+User Metrics is not automatically gathered, you have to start this manually. Add following code to **MainActivity**:
+```cs
+using HockeyApp.Android.Metrics;
+
+MetricsManager.Register(this, Application, "$Your_App_Id");
+```
+
+### Custom Events
+**Please note**: To use custom events, please first make sure that User Metrics is set up correctly, e.g. you registered the MetricsManager:
+
+```cs
+HockeyApp.MetricsManager.TrackEvent("Custom Event");
+```
+
+### User feedback integration in project
+This will add the ability for your users to provide feedback from right inside your app.
+
+```cs
+FeedbackManager.Register(this, "Your-App-Id");
+
+var feedbackButton = FindViewById<Button>(Resource.Id.feedback_button);
+
+feedbackButton.Click += delegate {
+    FeedbackManager.ShowFeedbackActivity(ApplicationContext);
+});
+```
