@@ -1,5 +1,11 @@
 # Creating your first Xamarin App
 
+## Learnings
+
+1. Create a new Xamarin Forms App with Visual Studio
+1. Learn about the MVVM architecture
+1. Run your code in the Android emulator
+
 ## Create a Visual Studio project
 1. Open Visual Studio
 1. Create a new project
