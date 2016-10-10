@@ -12,6 +12,18 @@
 1. Discuss the created project structure<br/>
    ![Project structure](images/exercise1/project-structure.png)
 
+## Add NuGet-Packages
+1. Open the NuGet Manager dialog for the project **HelloXamarin (Portable)**
+1. Add **Microsoft.Net.Http**
+1. Add **Newtonsoft.Json**
+1. Add **MvvmLightLibs**<br/>
+   ![MvvmLight](images/exercise1/mvvmlight.png)
+
+## Create a ViewModel
+1. Discuss MVVM architecture briefly
+1. Create a folder **ViewModels** in the **HelloXamarin (Portable)** project
+1. Create a class **AlbumViewModel.cs** in this folder
+1. 
 
 
 

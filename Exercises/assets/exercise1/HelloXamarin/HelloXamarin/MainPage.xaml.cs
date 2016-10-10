@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelloXamarin.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace HelloXamarin
         public MainPage()
         {
             InitializeComponent();
+
+            this.BindingContext = new AlbumViewModel();
         }
     }
 }
