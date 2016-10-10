@@ -6,7 +6,7 @@
 
   <StackLayout Orientation="Vertical">
     <Button Text="Load albums" Command="{Binding LoadAlbumsCommand}" />
-    <ListView ItemsSource="{Binding Albums}">
+    <ListView ItemsSource="{Binding Albums}" ItemTapped="OnAlbumTapped">
       <ListView.ItemTemplate>
         <DataTemplate>
           <TextCell Text="{Binding Title}" />

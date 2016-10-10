@@ -1,4 +1,5 @@
-﻿using HelloXamarin.ViewModels;
+﻿using HelloXamarin.Models;
+using HelloXamarin.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,12 @@ namespace HelloXamarin
             InitializeComponent();
 
             this.BindingContext = new AlbumViewModel();
+        }
+
+        private void OnAlbumTapped(object sender, ItemTappedEventArgs e)
+        {
+            var album = e.Item as Album;
+            this.Navigation.PushAsync(new PhotoPage(album.Id));
         }
     }
 }

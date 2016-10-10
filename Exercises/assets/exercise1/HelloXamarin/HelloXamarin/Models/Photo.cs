@@ -14,6 +14,6 @@ namespace HelloXamarin.Models
 
         public string ThumbnailUrl { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string Url { get; set; }
     }
 }
