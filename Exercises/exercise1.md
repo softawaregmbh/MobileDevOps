@@ -26,13 +26,14 @@
 1. Discuss MVVM architecture briefly
 1. Create a folder **Models** in the **HelloXamarin (Portable)** project
 1. Create two classes **Album** and **Photo**<br/>
-   ```
-   public class Album
-   {
-     public int Id { get; set; }
-     public string Title { get; set; }
-   }
-   ```
+
+    ```
+    public class Album
+    {
+       public int Id { get; set; }
+       public string Title { get; set; }
+    }
+    ```
 
 ## Create a ViewModel
 1. Create a folder **ViewModels** in the **HelloXamarin (Portable)** project
