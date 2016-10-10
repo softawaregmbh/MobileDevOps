@@ -15,7 +15,7 @@ The goal of the sample is to see blog posts and tweets by Scott Hanselman. Due t
 ## Session Structure
 
 * The exercises are built for a **two-days workshop**.
-* The first day consists of **three sessions**, the second day of **four essions**.
+* The first day consists of **three sessions**, the second day of **four sessions**.
 * You can use one exercise per session. However, if you audience is especially initerested in certain topics, you can spend more time on certain exercises and keep the other ones shorter.
 
 ## Suggested Session Plan
