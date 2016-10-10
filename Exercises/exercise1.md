@@ -25,7 +25,7 @@
 ## Create Models
 1. Discuss MVVM architecture briefly
 1. Create a folder **Models** in the **HelloXamarin (Portable)** project
-1. Create two classes **Album** and **Photo**
+1. Create two classes **Album** and **Photo**<br/>
    ```
    public class Album
    {
@@ -118,7 +118,7 @@ public class AlbumViewModel : ViewModelBase
 
 ## Set start page
 1. Open **App.cs**
-1. Remove the sample code in the constructor and change it to
+1. Remove the sample code in the constructor and change it to<br/>
     ```
     public App()
     {
@@ -135,7 +135,7 @@ public class AlbumViewModel : ViewModelBase
 
 1. Open **Visual Studio Emulator for Android** <br/>
    ![Visual Studio Emulator for Android](images/exercise1/emulator-start.png)
-1. Download an Emulator with API Level 23 (e.g. **5.1" Marshmallow (6.0.0) XXHDPI Phone API Level 23**, similar to Samsung Galaxy S6)
+1. Download an Emulator with API Level 23 (e.g. **5.1" Marshmallow (6.0.0) XXHDPI Phone API Level 23**, similar to Samsung Galaxy S6)<br/>
    ![Visual Studio Emulator for Android](images/exercise1/emulator-download.png)
 1. Switch to **Visual Studio**
 1. Set the **HelloXamarin.Droid** app as your startup project
@@ -150,7 +150,8 @@ public class AlbumViewModel : ViewModelBase
    ```
    <ListView ItemsSource="{Binding Albums}" ItemTapped="OnAlbumTapped">
    ```
-1. Add the following method to the Code-behind file
+
+1. Add the following method to the Code-behind file<br/>
     ```
     private void OnAlbumTapped(object sender, ItemTappedEventArgs e)
     {
@@ -174,6 +175,7 @@ public class AlbumViewModel : ViewModelBase
 
 ## Delete Visual Studio ComponentModelCache
 If you encounter error messages when creating or opening a Xamarin project (e.g. "A problem was encountered creating the sub project 'HelloAndroid.Droid'. Attempted to access a missing method."): try to remove the ComponentModelCache:
+
 1. Close Visual Studio
 1. Open file explorer in "%localappdata%\Microsoft\VisualStudio\14.0\ComponentModelCache"
 1. Delete all the files
