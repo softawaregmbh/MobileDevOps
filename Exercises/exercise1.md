@@ -9,7 +9,8 @@
    ![Project template](images/exercise1/create-project.png)
 1. Discuss the difference between the two code-sharing strategies **Portable** and **Shared** (see [Sharing Code Options](https://developer.xamarin.com/guides/cross-platform/application_fundamentals/building_cross_platform_applications/sharing_code_options/) for further details)
 1. Name the project **HelloAndroid**
-
+1. Discuss the created project structure<br/>
+   ![Project structure](images/exercise1/project-structure.png)
 
 
 
@@ -29,3 +30,10 @@
 1. Click "Check now"
 1. Download and install update if available<br/>
    ![Xamarin Update](images/exercise1/xamarin-download.png)
+
+## Delete Visual Studio ComponentModelCache
+If you encounter error messages when creating a new Xamarin project (e.g. "A problem was encountered creating the sub project 'HelloAndroid.Droid'. Attempted to access a missing method."), try to remove the ComponentModelCache:
+1. Close Visual Studio
+1. Open file explorer in "%localappdata%\Microsoft\VisualStudio\14.0\ComponentModelCache"
+1. Delete all the files
+1. Open Visual Studio
