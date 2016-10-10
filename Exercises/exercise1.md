@@ -132,7 +132,7 @@ public class AlbumViewModel : ViewModelBase
 1. Build the solution<br/>
    **Attention**: The first build may last up to several minutes due to Xamarin download tasks in the background. Don't interrupt the build process.
 1. Set Java heap size in the app project settings
-   ![Set Java heap size](images/exercise1/JavaMaxHeapSize.png)
+   ![Set Java heap size](images/exercise1/JavaMaxHeapSize.PNG)
 
 1. Open **Visual Studio Emulator for Android** <br/>
    ![Visual Studio Emulator for Android](images/exercise1/emulator-start.png)
