@@ -6,7 +6,7 @@ This repository and its content has been created for the training "Mobile DevOps
 
 ## Slides and Exercises
 
-**Note that you can view the agenda slides with links to related resources online at [http://rstropek.github.io/PracticalDevOpsTraining/](http://rstropek.github.io/PracticalDevOpsTraining/)**. You can also [download a slide deck with related content from Onedrive](https://onedrive.live.com/download?cid=632D39C47B303BA3&resid=632D39C47B303BA3%21132534&authkey=AEIDHvi5wAijm4s).
+You can [download a slide deck with related content from Onedrive](https://1drv.ms/p/s!AnByKdQdIw5KgifodS-DutFnfQjn).
 
 **You find the exercises of the training in the [Exercises](Exercises) folder.**
 
