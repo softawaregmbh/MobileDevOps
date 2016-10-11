@@ -9,7 +9,7 @@
 ## Create an interface for feed retrieval
 1. Discuss the need of an interface
 1. Create a folder **Manager**
-1. Add a new interface called **IFeedManager.cs**
+1. Add a new interface called **IFeedManager.cs**<br/>
     ```
     public interface IFeedManager<T>
     {
