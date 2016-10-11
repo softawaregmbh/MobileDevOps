@@ -37,7 +37,7 @@
 ### Changes in your Portable project
 1. Discuss the advantages of creating interfaces in the portable project (the platform specific implementations will be added to the Android project)
 1. Create a folder named **Auth**
-1. Create a new interface **IAuthenticate**
+1. Create a new interface **IAuthenticate**<br/>
     ```cs
     public interface IAuthenticate
     {
@@ -51,6 +51,7 @@
     public interface ILoginManager
     {
         void ShowMainPage();
+
         void ShowLogin();
     } 
     ```
@@ -189,7 +190,7 @@
 ### Changes in your Android project   
 1. Open **MainActivity.cs**
 1. Add a private field called **user** and a property **IsAuthenticated**<br/>
-    ```cs
+    ```
     private MobileServiceUser user;
     public bool IsAuthenticated { get; private set; }
     ```
