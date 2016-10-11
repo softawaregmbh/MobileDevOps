@@ -72,6 +72,20 @@ The code should appear in the *VSTS* repo after the import completed. You can cl
 
 ![VSTS_After_Import_Code_From_GitHub](images/exercise2/After_Import_From_Git_Repo.png "Imported code from GitHub-Repo")
 
+## Connect Visual Studio to your VSTS repository
+1. Open Visual Studio
+1. Open the **Team Explorer** (View > Team Explorer)
+1. Click on **Manage Connections > Connect to Team project**<br/>
+   ![Connect to Team project](images/exercise2/vs-teamexplorer.png)
+1. Add your VSTS<br/>
+   ![Add the VSTS to Visual Studio](images/exercise2/vs-add-vsts.png)
+1. Select the **Hanselman.Forms** project<br/>
+   ![Select the project](images/exercise2/vs-select-project.png)
+1. **Clone** the repository<br/>
+   ![Select the project](images/exercise2/vs-clone.png)
+1. Try to run the app in the Android Emulator (see [Exercise 1](exercise1.md) for trouble shooting)<br/>
+   **Plan enough time for solving problems with Emulator, Xamarin, NuGet, etc.** 
+
 ## Build Automation
 1. Without changing any code we can configure our automated build with *VSTS*. 
 1. Switch to the **BUILD** view. This view provides an overview of all build definitions and their current status.

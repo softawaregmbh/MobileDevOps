@@ -10,7 +10,7 @@
 - Roman / Patrik
 
 ## Build Automation with Unit-Tests
-The build template, created in [exercise2](exercise2.md) has to be changed.
+The build template, created in [Exercise 2](exercise2.md) has to be changed.
 
 1. Got to build definition
 1. click **Edit** (top-right)
@@ -19,7 +19,7 @@ The build template, created in [exercise2](exercise2.md) has to be changed.
 ![Build_Test_1](images/exercise3/Build_Test_1.png "Add Visual Studio Test build step")
 1. Change the order of the build steps like picture below
 ![Build_Test_2](images/exercise3/Build_Test_2.png "New step order")
-1. Select Test Assemblies step and change settint **Test Assembly** to '$(build.binariesdirectory)/$(BuildConfiguration)/test-assembly/Softaware.Test.dll'
+1. Select Test Assemblies step and change setting **Test Assembly** to '$(build.binariesdirectory)/$(BuildConfiguration)/test-assembly/Softaware.Test.dll'
 ![Build_Test_3](images/exercise3/Build_Test_3.png "Unit-Test build step")
 1. Save changes and queue new build
 
