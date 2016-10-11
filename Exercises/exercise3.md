@@ -1,9 +1,6 @@
 
 # Importance of testing your projects
 
-- Unit-Testen (Roman / Patrik)
-- Testautomatisierung in VSTS (Dominik)
-
 ## Learnings
 
 1. [Unit-Tests](#unit-tests)
@@ -13,8 +10,18 @@
 - Roman / Patrik
 
 ## Build Automation with Unit-Tests
-In [exercise2](exercise2.md) created build template, the third step is already a Unit-Testing step.
+The build template, created in [exercise2](exercise2.md) has to be changed.
 
-![Build_Test_1](images/exercise3/Build_Test_1.png "Unit-Test build step")
+1. Got to build definition
+1. click **Edit** (top-right)
+1. Add new build step
+1. Select Category: Test / Visual Studio Test
+![Build_Test_1](images/exercise3/Build_Test_1.png "Add Visual Studio Test build step")
+1. Change the order of the build steps like picture below
+![Build_Test_2](images/exercise3/Build_Test_2.png "New step order")
+1. Select Test Assemblies step and change settint **Test Assembly** to '$(build.binariesdirectory)/$(BuildConfiguration)/test-assembly/Softaware.Test.dll'
+![Build_Test_3](images/exercise3/Build_Test_3.png "Unit-Test build step")
+1. Save changes and queue new build
 
-After checkin, the next build should include all Unit-Tests an
+After success the test results appear in the build results overview page.
+![Build_Test_4](images/exercise3/Build_Test_4.png "Unit-Test build step")
