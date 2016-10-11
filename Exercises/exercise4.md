@@ -75,15 +75,16 @@ Detailed functionality can be found at [Xamarin.UITest.IApp](https://developer.x
 
 ## Record tests using Test Recorder
 **Important:** This feature is only available in Visual Studio Enterprise edition. Explain the idea or show the following steps live.
+
 1. **Install the Xamarin Test Recorder** through Visual Studio > Tools > Extensions and Updates
-1. Open the properties of your **Hanselman.Android** project and disable **Use Shared Runtime**
+1. Open the properties of your **Hanselman.Android** project and disable **Use Shared Runtime**<br/>
    ![Use shared runtime](images/exercise4/XamarinTestRecorderSharedRuntime.png)
 1. Open the **Tests.cs** class from your UI test project
-1. Click on the Test Recorder icon and select **Record new test > Build Hanselman.Android project**
+1. Click on the Test Recorder icon and select **Record new test > Build Hanselman.Android project**<br/>
    ![Test Recorder](images/exercise4/XamarinTestRecorderRecord.png)
 1. The app is started in the emulator, wait until it is loaded completely.
 1. Click through several pages in the app, you will see the recorded actions live in Visual Studio
-1. Go to Visual Studio to stop the current test case.
+1. Go to Visual Studio to stop the current test case.<br/>
    ![Stop Test Recorder](images/exercise4/XamarinTestRecorderStop.png)
 
 

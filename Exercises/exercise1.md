@@ -150,9 +150,9 @@ public class AlbumViewModel : ViewModelBase
    ![Visual Studio Emulator for Android](images/exercise1/emulator-vs.png)
 
 ## Add detail Page
-1. Copy **Photo.cs** to the **Models** folder
-1. Copy **PhotoViewModel.cs** to the **ViewModels** folder
-1. Copy **PhotoPage.xaml** and **PhotoPage.xaml.cs** to the root folder
+1. Copy [**Photo.cs**](assets/exercise1/HelloXamarin/HelloXamarin/Models/Photo.cs) to the **Models** folder
+1. Copy [**PhotoViewModel.cs**](assets/exercise1/HelloXamarin/HelloXamarin/ViewModels/PhotoViewModel.cs) to the **ViewModels** folder
+1. Copy [**PhotoPage.xaml**](assets/exercise1/HelloXamarin/HelloXamarin/PhotoPage.xaml) and [**PhotoPage.xaml.cs**](assets/exercise1/HelloXamarin/HelloXamarin/PhotoPage.xaml.cs)  to the root folder
 1. **Register an event handler** to the ListView in **MainPage.xaml**
    ```
    <ListView ItemsSource="{Binding Albums}" ItemTapped="OnAlbumTapped">
