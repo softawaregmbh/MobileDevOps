@@ -2,10 +2,10 @@
 
 ## Learnings
 
-1. How to sign up for a Xamarin Test Cloud account 
-1. Create a coded UI test
-1. Record an UI test by using Xamarin Test Recorder
-1. Run tests in the cloud 
+1. [How to sign up for a Xamarin Test Cloud account](#sign-up-for-a-free-trial-of-xamarin-test-cloud)  
+1. [Create a coded UI test](#create-a-new-test-project-in-visual-studio)  
+1. [Record an UI test by using Xamarin Test Recorder](#record-tests-using-test-recorder)  
+1. [Run tests in the cloud ](#)  
 
 ## Sign up for a free trial of Xamarin Test Cloud
 1. Open [Xamarin Website](https://www.xamarin.com/)

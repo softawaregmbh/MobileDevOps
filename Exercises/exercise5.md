@@ -8,6 +8,7 @@
 1. [Connection between VSTS and HockeyApp](#connection-between-vsts-and-hockeyapp)
 1. [Build integration](#build-integration)
 1. [HockeyApp integration in project](#hockeyapp-integration-in-project)
+1. [Release Management in VSTS](#release-management-in-vsts)
 
 ## Register to HockeyApp
 1. Go to offical [HockeyApp](https://www.hockeyapp.net/) page
@@ -118,3 +119,56 @@ feedbackButton.Click += delegate {
     FeedbackManager.ShowFeedbackActivity(ApplicationContext);
 });
 ```
+
+## Release Management in VSTS
+**Target:** Two independent environments, one for development and one for production. The development version should deploy automatically to *HockeyApp* and the production version should deploy automatically to *Google Play Store*.
+
+### 1. Environment: HockeyApp
+1. Go to release view in *VSTS*
+1. Click on **New Definition**
+![Release_Start](images/exercise5/Release_Start.png "First release definition")
+
+1. Select empty definition
+![Release_New_Definition](images/exercise5/Release_New_Definition_1.png "Create release definition")
+
+1. Select build (Build with Tests, but without HockeyApp auto deployment), project: 'Hanselman.Forms' and build definition: 'Build'. If desired use *continuouse deployment*. Select the default *Hosted* agent queue and click on the **Create** button.
+![Release_New_Definition](images/exercise5/Release_New_Definition_2.png "Create release definition")
+
+1. Change name to 'Android'
+1. Change name of first, auto generated environment to 'HockeyApp'
+1. Add deployment task **HockeyApp**, add **HockeyApp Connection** and set **Binary File Path** to
+```cs
+build/**/*.apk
+```
+1. Go to Artifacts tab, change name of source alias to **build**
+![Release_Created_First_Environment](images/exercise5/Release_HockeyApp_Task.png "Created first release environment")
+
+1. Save and start new release to test current settings
+![Release_First_Release](images/exercise5/Release_HockeyApp_Task_Success.png "First succeeded release build")
+
+### 2. Environment: Google Play Store
+1. Add new environment
+1. Select empty definition, and in the Pre-deployment approval select on specific user from your project team. Check the auto deployment trigger and select the default hosted queue.
+![Release_Add_New_Environment](images/exercise5/Release_Add_New_Environment.png "Add new environment")
+
+1. Change name of created environment to **Google Play Store**
+1. Add new task and click on **Don't see what you need? Check out our Marketplace.** to get to the marketplace.
+1. Search for **Google Play** and install the extension.
+![Release_Google_Play_Marketplace](images/exercise5/Release_Google_Play_Marketplace.png "Install Google Play VSTS Extension")
+
+1. After installation, select the new deploy task **Google Play - Release**, add it and close the dialog.
+1. Add new **Service Endpoint** for your **Google Play developer account** and select it.
+![Release_Google_Play_Service_Endpoint](images/exercise5/Release_Google_Play_Service_Endpoint.png "Add new Google Play Connection")
+
+1. Set **APK Path** to and click on save
+```cs
+build/**/*.apk
+```
+
+Now following **Release Management** and **Build** order is configured:
+1. New code is checked in
+1. Build-Task **Build & Test** started automatically
+1. If build succeeded, release management start **HockeyApp - Deployment** and new version can be tested
+1. After testing, new version has to be approved
+1. When all specified users approved the new version, release management start deployement to **Google Play store** automatically
+1. New version is online and all users of the app can update or download the new version
