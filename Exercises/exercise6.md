@@ -46,7 +46,7 @@
         bool IsAuthenticated { get; }
     }    
     ```
-1. Create a new interface **ILoginManager**   
+1. Create a new interface **ILoginManager**<br/>   
     ```cs
     public interface ILoginManager
     {
