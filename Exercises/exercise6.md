@@ -190,6 +190,7 @@
 ### Changes in your Android project   
 1. Open **MainActivity.cs**
 1. Add a private field called **user** and a property **IsAuthenticated**<br/>
+
     ```cs
     private MobileServiceUser user;
     public bool IsAuthenticated { get; private set; }
