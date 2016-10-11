@@ -7,7 +7,7 @@
 1. Create a new **Mobile App**<br/>
     ![Create a new mobile app](images/exercise6/azure-create1.png)
 1. Enter a name, choose or create a Resource group and an App Service Plan
-1. Remember the URL of your mobile service (https://<YOUR_NAME>.azurewebsites.net), you'll need it for the facebook setup
+1. Remember the URL of your mobile service (```https://<YOUR_MOBILE_SERVICE>.azurewebsites.net```), you'll need it for the facebook setup
 
 ## Create a facebook app
 1. Open the [Facebook Developer](https://developers.facebook.com/) page
@@ -20,7 +20,7 @@
 1. Choose **Settings** and set up your facebook app<br/>
     - **App Domains:** Add the domain of your mobile service
     - Click on **Add Platform** at the bottom
-    - **Site URL:** set to https://<YOUR_MOBILE_SERVICE>/.auth/login/facebook (**Note:** take https, not http)
+    - **Site URL:** set to ```https://<YOUR_MOBILE_SERVICE>/.auth/login/facebook``` (**Note:** take https, not http)
     ![Settings](images/exercise6/facebook-settings.png)    
 
 ## Join Azure Mobile App and Facebook     
