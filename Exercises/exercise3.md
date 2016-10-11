@@ -121,20 +121,24 @@
 ## Change the TweetViewModel
 1. Change the affected rows of the **TweetViewModel** to use the new ManagerFactory
 1. Add a private field<br/>
+
    ```cs
    private IFeedManager<Tweet> twitterManger;
    ```
 1. Initialize the field in the constructor<br/>
+
     ```cs
     this.twitterManger = ManagerFactory.CreateTwitterManager(
         "ZTmEODUCChOhLXO4lnUCEbH2I",
         "Y8z2Wouc5ckFb1a0wjUDT9KAI6DUat5tFNdmIkPLl8T4Nyaa2J");
     ```
 1. Load the tweets in the ExecuteLoadTweetsCommand method (at the beginning of try/catch)<br/>
+
     ```cs
     var tweets = await this.twitterManger.LoadItemsAsync(this.Search);
     ```
-1. Add a .ToList() in the iOS implementation to solve compiler error
+1. Add a .ToList() in the iOS implementation to solve compiler error<br/>
+
     ```cs
     DependencyService.Get<ITweetStore>().Save(tweets.ToList());
     ```    

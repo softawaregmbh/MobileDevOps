@@ -12,7 +12,7 @@
 1. Select "Visual C# > Cross-Platform" and choose the **Blank App (Xamarin.Forms Portable)** project
    ![Project template](images/exercise1/create-project.png)
 1. Discuss the difference between the two code-sharing strategies **Portable** and **Shared** (see [Sharing Code Options](https://developer.xamarin.com/guides/cross-platform/application_fundamentals/building_cross_platform_applications/sharing_code_options/) for further details)
-1. Name the project **HelloAndroid**
+1. Name the project **HelloXamarin**
 1. Discuss the created project structure<br/>
    ![Project structure](images/exercise1/project-structure.png)
 
@@ -126,6 +126,7 @@ public class AlbumViewModel : ViewModelBase
 ## Set start page
 1. Open **App.cs**
 1. Remove the sample code in the constructor and change it to<br/>
+
     ```cs
     public App()
     {

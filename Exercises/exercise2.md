@@ -46,7 +46,7 @@ View of the team rooms management of the *VSTS* account. Team rooms are automati
 #### Load Tests
 View of the load test management of the *VSTS* account. Create, edit and start cloud-based load testing for your web projects. 20.000 minutes each month are free. See [Getting started with Performance testing](https://www.visualstudio.com/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) for more information.
 
-![VSTS_Users](images/exercise2/VSTS_Start_Rooms.png "Users")
+![VSTS_Users](images/exercise2/VSTS_Start_Load_Tests.png "Users")
 
 ## Create Team Project in VSTS
 
@@ -64,7 +64,8 @@ Finally choose a version control system, we use **Git**.
 ![VSTS_Create_Project_Progress](images/exercise2/CreateTeamProject-Progress.png "Progress of creating team project in VSTS")
 
 ## Import data from GitHub
-In this example we use the code from an external GitHub repository, so we have to import this code. Click on **Code**, **Import repository** and add the following link: [https://github.com/jamesmontemagno/Hanselman.Forms.git](https://github.com/jamesmontemagno/Hanselman.Forms.git);
+In this example we use the code from an external GitHub repository, so we have to import this code. Click on **Code**, **Import repository** and add the following link: 
+[https://github.com/jamesmontemagno/Hanselman.Forms.git](https://github.com/jamesmontemagno/Hanselman.Forms.git);
 
 ![VSTS_Import_Code_From_GitHub](images/exercise2/Import_From_Git_Repo.png "Import code from GitHub-Repo")
 
