@@ -33,7 +33,7 @@
 1. Create a folder **Models** in the **HelloXamarin (Portable)** project
 1. Create two classes **Album** and **Photo**<br/>
 
-    ```
+    ```cs
     public class Album
     {
        public int Id { get; set; }
@@ -49,7 +49,7 @@
    - ICommand
    - Querying REST APIs
 
-```
+```cs
 public class AlbumViewModel : ViewModelBase
 {
     private IEnumerable<Album> albums;
@@ -90,7 +90,7 @@ public class AlbumViewModel : ViewModelBase
    - ListView control and cell types (see [ListView Control](https://developer.xamarin.com/guides/xamarin-forms/user-interface/listview/customizing-cell-appearance/))
    - DataBinding
 1. Define the layout
-    ```
+    ```xml
     <?xml version="1.0" encoding="utf-8" ?>
     <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -111,7 +111,7 @@ public class AlbumViewModel : ViewModelBase
     </ContentPage>
     ```   
 1. Set the ViewModel in the Code-behind file
-    ```
+    ```cs
     public partial class MainPage : ContentPage
     {
         public MainPage()
@@ -126,7 +126,7 @@ public class AlbumViewModel : ViewModelBase
 ## Set start page
 1. Open **App.cs**
 1. Remove the sample code in the constructor and change it to<br/>
-    ```
+    ```cs
     public App()
     {
         MainPage = new NavigationPage(new MainPage());
@@ -154,12 +154,12 @@ public class AlbumViewModel : ViewModelBase
 1. Copy [**PhotoViewModel.cs**](assets/exercise1/HelloXamarin/HelloXamarin/ViewModels/PhotoViewModel.cs) to the **ViewModels** folder
 1. Copy [**PhotoPage.xaml**](assets/exercise1/HelloXamarin/HelloXamarin/PhotoPage.xaml) and [**PhotoPage.xaml.cs**](assets/exercise1/HelloXamarin/HelloXamarin/PhotoPage.xaml.cs)  to the root folder
 1. **Register an event handler** to the ListView in **MainPage.xaml**
-   ```
+   ```xml
    <ListView ItemsSource="{Binding Albums}" ItemTapped="OnAlbumTapped">
    ```
 
 1. Add the following method to the Code-behind file<br/>
-    ```
+    ```cs
     private void OnAlbumTapped(object sender, ItemTappedEventArgs e)
     {
         var album = e.Item as Album;

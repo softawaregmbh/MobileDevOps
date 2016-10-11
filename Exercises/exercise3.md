@@ -10,7 +10,7 @@
 1. Discuss the need of an interface
 1. Create a folder **Manager**
 1. Add a new interface called **IFeedManager.cs**<br/>
-    ```
+    ```cs
     public interface IFeedManager<T>
     {
         Task<IEnumerable<T>> LoadItemsAsync(string search = null);
@@ -20,7 +20,7 @@
 ## Create an implementation for Twitter
 1. Add a new class called **TwitterManager.cs**
 1. You can copy most of the code from the existing **TwitterViewModel.cs**
-    ```
+    ```cs
     public class TwitterManager : IFeedManager<Tweet>
     {
         private IAuthorizer auth;
@@ -75,7 +75,7 @@
 
 ## Create a mock implementation
 1. Add a new class called **MockTwitterManager.cs**
-    ```
+    ```cs
     public class MockTwitterManager : IFeedManager<Tweet>
     {
         public async Task<IEnumerable<Tweet>> LoadItemsAsync(string search = null)
@@ -104,7 +104,7 @@
 ## Create a factory (optional)
 1. Discuss the advantages of a factory
 1. Add a new class called **ManagerFactory.cs**
-    ```
+    ```cs
     public static class ManagerFactory
     {
         public static bool IsMocked { get; set; } = false;
@@ -121,21 +121,21 @@
 ## Change the TweetViewModel
 1. Change the affected rows of the **TweetViewModel** to use the new ManagerFactory
 1. Add a private field<br/>
-   ```
+   ```cs
    private IFeedManager<Tweet> twitterManger;
    ```
 1. Initialize the field in the constructor<br/>
-    ```
+    ```cs
     this.twitterManger = ManagerFactory.CreateTwitterManager(
         "ZTmEODUCChOhLXO4lnUCEbH2I",
         "Y8z2Wouc5ckFb1a0wjUDT9KAI6DUat5tFNdmIkPLl8T4Nyaa2J");
     ```
 1. Load the tweets in the ExecuteLoadTweetsCommand method (at the beginning of try/catch)<br/>
-    ```
+    ```cs
     var tweets = await this.twitterManger.LoadItemsAsync(this.Search);
     ```
 1. Add a .ToList() in the iOS implementation to solve compiler error
-    ```
+    ```cs
     DependencyService.Get<ITweetStore>().Save(tweets.ToList());
     ```    
 
@@ -143,7 +143,7 @@
 ## Create a unit test
 1. Add a new **Test project** called **Hanselman.Tests**
 1. Create a unit test
-    ```
+    ```cs
     [TestClass]
     public class Tests
     {

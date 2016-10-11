@@ -1,5 +1,3 @@
-
-
 # HockeyApp Integration - Build and User Feedback
 
 ## Learnings
@@ -11,32 +9,32 @@
 1. [Release Management in VSTS](#release-management-in-vsts)
 
 ## Register to HockeyApp
-1. Go to offical [HockeyApp](https://www.hockeyapp.net/) page
+1. Go to the [HockeyApp](https://www.hockeyapp.net/) page
 1. Sign up for free (Button top right)
 1. Enter your data
 1. Select the **I'm a developer** checkbox
-1. Click on **Register** button to sign up.
+1. Click on the **Register** button to sign up.
 
 ![HockeyApp_SignUp](images/exercise5/HockeyApp_SignUp.png "Sign up to HockeyApp")
 
-After sign up and login to the created account to create a new app. In the first dialog choose **create the app manually instead**.
+After signing up login to the created account to create a new app. In the first dialog choose **create the app manually instead**.<br/>
 
 ![HockeyApp_Create_App_1](images/exercise5/HockeyApp_Create_App.png "Create HockeyApp App")
 
 1. Select the platform (*Android*),
 1. the release type (*beta*),
 1. the title (*Hanselman.Forms*) and
-1. the bundle identifier (*com.refractored.hanselman*)
+1. the bundle identifier (*com.refractored.hanselman* - see AndroidManifest.xml)
 
 ![HockeyApp_Create_App_2](images/exercise5/HockeyApp_Create_App_2.png "Create HockeyApp App - Settings")
 
-After creating the app with click on the save button the overview of the app appears.
+Click on **Save** to create the app.
 
 ![HockeyApp_App_Created](images/exercise5/HockeyApp_App_Created.png "App Dashboard")
 
 ## Connection between VSTS and HockeyApp
-1. Go to the settings page with click on the **Manage App** button.
-2. **Visual Studio Team Services** is the navigation point to use.
+1. Click on **Manage App** to go to the settings page.
+2. Click on **Visual Studio Team Services**.
 3. Click on **Configure**, enter your *VSTS* login infos and authorize the connection.
 
 ![HockeyApp_Attach_To_VSTS](images/exercise5/HockeyApp_Attach_To_VSTS.png "Connection between VSTS and HockeyApp")
@@ -46,45 +44,45 @@ Choose the correct *VSTS* project and check **Auto Create Ticket** on **Crash Gr
 ![HockeyApp_Attach_To_VSTS](images/exercise5/HockeyApp_Attached_To_VSTS.png "Connection between VSTS and HockeyApp")
 
 ## Build integration
-Next step is to integrate *HockeyApp* in the build automation process created in **exercise 2**. For build integration *VSTS* need an api key of our *HockeyApp* account. Create this key in the **Account Settings** - **API Tokens** and save it in the clipboard.
+Next step is to integrate *HockeyApp* in the build automation process created in [**exercise 2**](exercise2.md). For build integration *VSTS* needs an api key of our *HockeyApp* account. Create this key in the **Account Settings** - **API Tokens** and copy it to the clipboard.
 
 ![HockeyApp_Api_Key](images/exercise5/HockeyApp_Api_Key.png "Created Api-Key in HockeyApp settings")
 
-Then install the **HockeyApp-Extension** from the **VSTS Marketplace.**
+Install the **HockeyApp-Extension** from the **VSTS Marketplace.**
 
 ![VSTS_Marketplace_HockeyApp](images/exercise5/VSTS_Install_Hockey_app.png "Install HockeyApp-Extension from marketplace")
 
 1. Open the created build definition and click on **Edit**.
 1. Add new build step
-1. Select the before installed **HockeyApp-Extension** (Deploy category)
+1. Select the before installed **HockeyApp-Extension** (category "Deploy")
 1. Click on close to add the selected task
 
 ![VSTS_Marketplace_HockeyApp](images/exercise5/VSTS_Build_Add_Hockey_App_Task.png "Add HockeyApp task to build definition")
 
-The added task need a **HockeyApp Connection**.
+The added task needs a **HockeyApp Connection**.
 1. Click on **Manage**, right beside the **HockeyApp Connection** input
 1. Add new service endpoint
 1. Choose **HockeyApp**
 1. Input the name = "Sample.Hanselman.Forms"
-1. Paste the before created *Api-Key* from clipboard
+1. Paste the *Api-Key* from clipboard
 
 ![VSTS_Service_Endpoint_1](images/exercise5/VSTS_Build_Add_Hockey_App_Service_1.png "Add new Service Endpoint")
 
 ![VSTS_Service_Endpoint_2](images/exercise5/VSTS_Build_Add_Hockey_App_Service_2.png "Add new HockeyApp Connection")
 
-Back to the build definition, after refresh (click on the refresh button) the "Sample.Hanselman.Forms" connection should appear. Then save the build definition and queue a new build. After build succeeded the apk-File should appear in *HockeyApp*.
+Back to the build definition (after refreshing) the "Sample.Hanselman.Forms" connection should appear. Save the build definition and queue a new build. After build succeeded the apk-File should appear in *HockeyApp*.
 
 ![VSTS_Service_Endpoint_2](images/exercise5/HockeyApp_After_First_Build.png "New version created in HockeyApp after build succeeded")
 
 ## HockeyApp integration in project
 
 ### Crash Reporting
-1. Add NuGet package: [HockeySDK.Xamarin ](https://www.nuget.org/packages/HockeySDK.Xamarin/)
+1. Add NuGet package to the Android project: [HockeySDK.Xamarin ](https://www.nuget.org/packages/HockeySDK.Xamarin/)
 ![Integration_NuGet](images/exercise5/Integration_NuGet.png "Add HockeySDK.Xamarin")
 
 1. Add code to Properties/AssemblyInfo.cs
 ```cs
-[assembly: MetaData("net.hockeyapp.android.appIdentifier", Value = "App ID")]
+[assembly: MetaData("net.hockeyapp.android.appIdentifier", Value = "YOUR_APP_ID_FROM_HOCKEY_APP")]
 ```
 
 1. Add code to **MainActivity**
@@ -97,7 +95,7 @@ User Metrics is not automatically gathered, you have to start this manually. Add
 ```cs
 using HockeyApp.Android.Metrics;
 
-MetricsManager.Register(this, Application, "$Your_App_Id");
+MetricsManager.Register(Application);
 ```
 
 ### Custom Events
@@ -111,7 +109,7 @@ HockeyApp.MetricsManager.TrackEvent("Custom Event");
 This will add the ability for your users to provide feedback from right inside your app.
 
 ```cs
-FeedbackManager.Register(this, "Your-App-Id");
+FeedbackManager.Register(Application);
 
 var feedbackButton = FindViewById<Button>(Resource.Id.feedback_button);
 
@@ -147,8 +145,8 @@ build/**/*.apk
 ![Release_First_Release](images/exercise5/Release_HockeyApp_Task_Success.png "First succeeded release build")
 
 ### 2. Environment: Google Play Store
-1. Add new environment
-1. Select empty definition, and in the Pre-deployment approval select on specific user from your project team. Check the auto deployment trigger and select the default hosted queue.
+1. Add a new environment
+1. Select empty definition and choose a user from your project team in the pre-deployment approval. Activate the auto deployment trigger and select the default hosted queue.
 ![Release_Add_New_Environment](images/exercise5/Release_Add_New_Environment.png "Add new environment")
 
 1. Change name of created environment to **Google Play Store**
@@ -157,18 +155,18 @@ build/**/*.apk
 ![Release_Google_Play_Marketplace](images/exercise5/Release_Google_Play_Marketplace.png "Install Google Play VSTS Extension")
 
 1. After installation, select the new deploy task **Google Play - Release**, add it and close the dialog.
-1. Add new **Service Endpoint** for your **Google Play developer account** and select it.
+1. Add a new **Service Endpoint** for your **Google Play developer account** and select it.
 ![Release_Google_Play_Service_Endpoint](images/exercise5/Release_Google_Play_Service_Endpoint.png "Add new Google Play Connection")
 
 1. Set **APK Path** to and click on save
-```cs
-build/**/*.apk
-```
+    ```cs
+    build/**/*.apk
+    ```
 
-Now following **Release Management** and **Build** order is configured:
+Now the following **Release Management** and **Build** order is configured:
 1. New code is checked in
 1. Build-Task **Build & Test** started automatically
-1. If build succeeded, release management start **HockeyApp - Deployment** and new version can be tested
+1. If build succeeded, release management starts **HockeyApp - Deployment** and new version can be tested
 1. After testing, new version has to be approved
-1. When all specified users approved the new version, release management start deployement to **Google Play store** automatically
+1. When all specified users have approved the new version, release management starts deployement to **Google Play store** automatically
 1. New version is online and all users of the app can update or download the new version
