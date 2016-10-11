@@ -1,6 +1,7 @@
 # Enriching your Mobile Application with Services
 
 ## Learnings
+1. Integrate Facebook authentication to your Xamarin app
 
 ## Create a Mobile App in Azure
 1. Login to your Azure Portal

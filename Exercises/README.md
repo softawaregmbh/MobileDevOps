@@ -7,6 +7,7 @@ The exercises are used to show different aspects of Xamarin and Visual Studio th
 ## Goal of the Sample
 
 The sample is taken from [Scott Hanselman](https://www.hanselman.com) and built with Xamarin Forms, the original version can be found on [GitHub](https://github.com/softawaregmbh/Hanselman.Forms).
+A fork of that project with all the implemented exercises can be found on our [GitHub](https://github.com/softawaregmbh/Hanselman.Forms) repository.
 
 The goal of the sample is to see blog posts and tweets by Scott Hanselman. Due to Xamarin Forms the app is available on iOS, Android, Windows, Android Wear and Apple Watch.
 

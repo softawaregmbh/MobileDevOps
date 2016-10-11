@@ -65,6 +65,30 @@ Detailed functionality can be found at [Xamarin.UITest.IApp](https://developer.x
 * SwipeLeft / SwipeRight
 * Screenshot
 
+```cs
+[Test]
+public void ClickThroughTest()
+{
+    this.TestMenuItem("About");
+    this.TestMenuItem("Blog");
+    this.TestMenuItem("Twitter");
+    this.TestMenuItem("Hanselminutes");
+    this.TestMenuItem("Ratchet");
+    this.TestMenuItem("Developers Life");
+}
+
+private void TestMenuItem(string name)
+{
+    app.WaitForElement(x => x.Marked("OK"));
+    app.Tap(x => x.Marked("OK"));
+
+    app.WaitForElement(x => x.Marked(name));
+    app.Tap(x => x.Text(name));
+
+    app.Screenshot(name);
+}
+```
+
 ## Run tests
 1. Make a release build of the app
 1. Create an .apk file<br/>
