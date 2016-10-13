@@ -16,6 +16,10 @@
 1. Start the **Visual Studio Emulator for Android**
 1. **Download an Emulator** with API Level 23 (e.g. 5.1" Marshmallow (6.0.0) XXHDPI Phone API Level 23, similar to Samsung Galaxy S6)
 
+## Create your Team Service account
+1. Go to the offical **[Visual Studio Team Service](https://www.visualstudio.com/de/team-services/)** page and create an account for free. 
+1. **Login** with your existing microsoft account or create a new one.
+
 ## Create an Azure Subscription
 If you don't have an existing Azure Subscription, create a trial for free:
 1. Go to **[www.azure.com](https://www.azure.com)**
