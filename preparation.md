@@ -5,14 +5,16 @@
 ## Visual Studio 2015 Update 3
 * Community Edition (free) or higher
 * Include the **Visual Studio Emulator for Android**
+* Include **Xamarin**
 
-## Xamarin
+## Xamarin (if not already installed with Visual Studio)
 1. Open **Visual Studio**
 1. Go to **Tools > Extensions and Updates...**
 1. Search for **Xamarin for Visual Studio**
 1. install
 
 ## Android Emulator
+1. **Install** the emulator (if not already installed with Visual Studio): [Download](https://www.visualstudio.com/de/vs/msft-android-emulator/)
 1. Start the **Visual Studio Emulator for Android**
 1. **Download an Emulator** with API Level 23 (e.g. 5.1" Marshmallow (6.0.0) XXHDPI Phone API Level 23, similar to Samsung Galaxy S6)
 
@@ -21,7 +23,6 @@
 1. **Login** with your existing microsoft account or create a new one.
 
 ## Create an Azure Subscription
-If you don't have an existing Azure Subscription, create a trial for free:
 1. Go to **[www.azure.com](https://www.azure.com)**
 1. Click on **Start free**
 1. **Sign up**
