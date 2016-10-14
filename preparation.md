@@ -1,6 +1,10 @@
 # Come prepared!
 
-**You will need your own laptop to do the hands-on labs.** Please come prepared and install the necessary tools upfront.
+Please come prepared and install the necessary tools upfront.
+
+## Laptop 
+* **You will need your own laptop to do the hands-on labs.** 
+* It's unfortunately not possible to do all exercises on a **Mac** as **Visual Studio** is obligatory.
 
 ## Visual Studio 2015 Update 3
 * Community Edition (free) or higher
