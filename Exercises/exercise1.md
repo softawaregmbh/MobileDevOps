@@ -151,6 +151,7 @@ public class AlbumViewModel : ViewModelBase
    ![Visual Studio Emulator for Android](images/exercise1/emulator-vs.png)
 
 ## Add detail Page
+1. ZIP-File with the following files can be found [here](https://1drv.ms/u/s!AnByKdQdIw5Kgm3B1H7g2YvCBeg1).
 1. Copy [**Photo.cs**](assets/exercise1/HelloXamarin/HelloXamarin/Models/Photo.cs) to the **Models** folder
 1. Copy [**PhotoViewModel.cs**](assets/exercise1/HelloXamarin/HelloXamarin/ViewModels/PhotoViewModel.cs) to the **ViewModels** folder
 1. Copy [**PhotoPage.xaml**](assets/exercise1/HelloXamarin/HelloXamarin/PhotoPage.xaml) and [**PhotoPage.xaml.cs**](assets/exercise1/HelloXamarin/HelloXamarin/PhotoPage.xaml.cs)  to the root folder
