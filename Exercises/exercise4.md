@@ -33,6 +33,7 @@
 
 ## Create your first test
 ```cs
+[TestFixture]
 public class Tests
 {
     private IApp app;
