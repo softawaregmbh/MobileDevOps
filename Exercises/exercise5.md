@@ -164,9 +164,15 @@ build/**/*.apk
     ```
 
 Now the following **Release Management** and **Build** order is configured:
+
 1. New code is checked in
+
 1. Build-Task **Build & Test** started automatically
+
 1. If build succeeded, release management starts **HockeyApp - Deployment** and new version can be tested
+
 1. After testing, new version has to be approved
+
 1. When all specified users have approved the new version, release management starts deployement to **Google Play store** automatically
+
 1. New version is online and all users of the app can update or download the new version
