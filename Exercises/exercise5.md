@@ -106,16 +106,11 @@ HockeyApp.MetricsManager.TrackEvent("Custom Event");
 ```
 
 ### User feedback integration in project
-This will add the ability for your users to provide feedback from right inside your app.
+This will add the ability for your users to provide feedback from right inside your app. For a quick demo we're calling the two methods right after startup - usually you would create a button or menu entry and execute it there.
 
 ```cs
 FeedbackManager.Register(Application);
-
-var feedbackButton = FindViewById<Button>(Resource.Id.feedback_button);
-
-feedbackButton.Click += delegate {
-    FeedbackManager.ShowFeedbackActivity(ApplicationContext);
-});
+FeedbackManager.ShowFeedbackActivity(ApplicationContext);
 ```
 
 ## Release Management in VSTS
