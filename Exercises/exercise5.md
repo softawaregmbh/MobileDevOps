@@ -70,7 +70,11 @@ The added task needs a **HockeyApp Connection**.
 
 ![VSTS_Service_Endpoint_2](images/exercise5/VSTS_Build_Add_Hockey_App_Service_2.png "Add new HockeyApp Connection")
 
-Back to the build definition (after refreshing) the "Sample.Hanselman.Forms" connection should appear. Save the build definition and queue a new build. After build succeeded the apk-File should appear in *HockeyApp*.
+Back to the build definition (after refreshing) the "Sample.Hanselman.Forms" connection should appear.
+Set the **Binary File Path** to ``` $(build.binariesdirectory)/$(BuildConfiguration)/*.apk ```
+
+Save the build definition and queue a new build. 
+After build succeeded the apk-File should appear in *HockeyApp*.
 
 ![VSTS_Service_Endpoint_2](images/exercise5/HockeyApp_After_First_Build.png "New version created in HockeyApp after build succeeded")
 
