@@ -123,19 +123,19 @@
 1. Add a private field<br/>
 
    ```cs
-   private IFeedManager<Tweet> twitterManger;
+   private IFeedManager<Tweet> twitterManager;
    ```
 1. Initialize the field in the constructor<br/>
 
     ```cs
-    this.twitterManger = ManagerFactory.CreateTwitterManager(
+    this.twitterManager = ManagerFactory.CreateTwitterManager(
         "ZTmEODUCChOhLXO4lnUCEbH2I",
         "Y8z2Wouc5ckFb1a0wjUDT9KAI6DUat5tFNdmIkPLl8T4Nyaa2J");
     ```
 1. Load the tweets in the ExecuteLoadTweetsCommand method (at the beginning of try/catch)<br/>
 
     ```cs
-    var tweets = await this.twitterManger.LoadItemsAsync(this.Search);
+    var tweets = await this.twitterManager.LoadItemsAsync();
     ```
 1. Add a .ToList() in the iOS implementation to solve compiler error<br/>
 
