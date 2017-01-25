@@ -4,6 +4,8 @@
 
 This repository and its content has been created for the training "Mobile DevOps". Its content is described below. The trainings take place all over Western Europe. Note that the content of the repository will not be kept up to date after all the trainings took place.
 
+Update: **Marc Müller** updated some exercises due to tool changes and enhanced the Hockey App exercise, see <https://github.com/4tecture/MobileDevOps>.
+
 ## Slides and Exercises
 
 You can [download a slide deck with related content from Onedrive](https://1drv.ms/p/s!AnByKdQdIw5KgifodS-DutFnfQjn).
